@@ -1,0 +1,30 @@
+:host {
+  margin: 20px;
+  display: block;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  opacity: 0.85 ;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+:host h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+:host p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+:host a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+:host a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+  font: 400 16px Roboto, sans-serif;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+nav a {
+  font-size: 1.5rem;
+}
+
+h1{
+  font-size: 2rem;
+}
