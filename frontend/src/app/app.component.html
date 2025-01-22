@@ -1,16 +1,20 @@
 <div class="container">
   <header>
+    <img class="logo" src="ad_logo.png">
     <nav>
       <a routerLink="/home"> Le Projet </a>
       <a routerLink="/about"> Infos Pratiques </a>
-      <img src="ad_title.png" height="100rem">
+      <img src="ad_title.png" height="90rem" alt="ARMADANUBE">
       <a routerLink="/register"> Inscription & Matos </a>
       <a routerLink="/contact"> Contact </a>
     </nav>
+    <div class="login">
+      <a routerLink="/login"> Login </a>
+    </div>
   </header>
 
   <div class="content">
-    <img class="global-background" src="home_background.jpg" width="100%">
+    <img class="global-background" src="home_background.jpg" width="100%" alt="Image de fond">
     <main>
       <router-outlet></router-outlet>
     </main>

@@ -18,16 +18,27 @@ header {
   background-color: #333;
   color: white;
   text-align: center;
-  padding: 10px 0;
   z-index: 1000;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
+.logo{
+  margin-left: 20px;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+}
+
+.login {
+  height: 5rem;
+  width: 5rem;
+  margin-right: 20px;
+}
+
 nav {
-  margin-top: 10px;
   display: flex;
   align-items: end;
 }
@@ -36,7 +47,8 @@ nav a {
   color: white;
   text-decoration: none;
   margin: 0 30px;
-  padding: 15px 0;
+  padding: 15px;
+  font-size: 1.2rem;
 }
 
 nav a:hover {
@@ -47,7 +59,7 @@ nav a:hover {
   flex: 1;
   display: flex;
   flex-direction: column;
-  margin-top: 120px; /* Adjust based on header height */
+  margin-top: 90px; /* Adjust based on header height */
 }
 
 main {
