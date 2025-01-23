@@ -12,7 +12,7 @@ import {DropdownComponent} from './core/ui/dropdown/dropdown.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit{
+export class AppComponent{
   title = 'frontend';
   buttonStyle = '  color: white;\n' +
     '  text-decoration: none;\n' +
@@ -20,10 +20,14 @@ export class AppComponent implements OnInit{
     '  padding: 15px;\n' +
     '  font-size: 1.2rem;';
 
+  dropdownItems = [
+    {label: 'Home', route: '/home'},
+    {label: 'About', route: '/about'},
+    {label: 'Contact', route: '/contact'},
+    {label: 'Services', route: '/services'},
+    ];
+
   constructor(
     private primeng: PrimeNG
   ) {}
-
-  ngOnInit() {
-  }
 }

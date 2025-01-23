@@ -1,18 +1,12 @@
 :host {
   margin: 20px;
-  display: block;
+  display: flex;
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 5px;
   background-color: #f9f9f9;
   opacity: 0.85 ;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: var(--width, auto);
-  height: var(--height, auto);
-  min-width: var(--min-width, auto);
-  min-height: var(--min-height, auto);
-  max-width: var(--max-width, auto);
-  max-height: var(--max-height, auto);
 }
 
 :host h1 {

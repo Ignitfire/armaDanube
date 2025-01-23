@@ -3,8 +3,15 @@
     <img class="logo" src="ad_logo.png">
     <nav>
       <a class="nav-element" routerLink="/home"> Le Projet </a>
-      <app-dropdown class="nav-element" [label] = "'Infos Pratiques'" [enableCreation]= true [buttonStyle]=buttonStyle></app-dropdown>
-      <img src="ad_title.png" height="90rem" alt="ARMADANUBE">
+      <app-dropdown
+        [label]="'Infos Pratiques'"
+        [items]="dropdownItems"
+        [enableCreation]="true"
+        dropdownClass="custom-dropdown"
+        buttonClass="custom-button"
+        menuClass="custom-menu">
+      </app-dropdown>
+      <img src="ad_title.png" height="90rem" alt="ARMADANUBE" loading="eager">
       <a class="nav-element" routerLink="/register"> Inscription & Matos </a>
       <a class="nav-element" routerLink="/contact"> Contact </a>
     </nav>

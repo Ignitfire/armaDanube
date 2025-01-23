@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { EditorModule } from 'primeng/editor';
-import { FormsModule } from '@angular/forms';
+import {FormControl, FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { TextBoxComponent } from '../../ui/text-box/text-box.component';
 import { PrimeNG } from 'primeng/config';
 
@@ -13,13 +13,23 @@ import { PrimeNG } from 'primeng/config';
   imports: [
     EditorModule,
     FormsModule,
-    TextBoxComponent
+    TextBoxComponent,
+    ReactiveFormsModule
   ]
 })
-export class PageCreationComponent {
+export class PageCreationComponent implements OnInit {
 
-  constructor(
-    private primeng: PrimeNG
-  ) {}
-  text: string | undefined;
+  formGroup!: FormGroup;
+
+  ngOnInit() {
+    this.formGroup = new FormGroup({
+      text: new FormControl()
+    });
+  }
+
+  onSubmit() {
+    console.log('Form submitted');
+    const editorContent = this.formGroup.get('text')?.value;
+    console.log(this.formGroup.value);
+  }
 }

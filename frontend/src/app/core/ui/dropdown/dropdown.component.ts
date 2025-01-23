@@ -1,7 +1,7 @@
 // dropdown.component.ts
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
 import { Router } from '@angular/router';
-import {NgClass, NgForOf, NgStyle} from '@angular/common';
+import {NgClass, NgForOf} from '@angular/common';
 
 interface DropdownItem {
   label: string;
@@ -14,20 +14,22 @@ interface DropdownItem {
   templateUrl: './dropdown.component.html',
   imports: [
     NgForOf,
-    NgStyle
+    NgClass
   ],
-  styleUrls: ['./dropdown.component.css']
+  styleUrls: ['./dropdown.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class DropdownComponent implements OnInit{
-  @Input() items: DropdownItem[] = [];
-  @Input() label = '';
-  @Input() enableCreation: boolean = false;
-  @Input() divStyle: string | undefined;
-  @Input() buttonStyle: string | undefined;
-  @Input() menuStyle: string | undefined;
+  @Input() label! : string;
+  @Input() items! : any[];
+  @Input() dropdownClass: string | undefined;
+  @Input() buttonClass: string | undefined;
+  @Input() menuClass: string | undefined;
+  @Input() enableCreation: boolean = false ;
   constructor(private router: Router) {}
 
   ngOnInit() {
+    console.log("enableCreation", this.enableCreation);
     if (this.enableCreation) {
       this.items.push({
         label: '+ Ajouter une page',

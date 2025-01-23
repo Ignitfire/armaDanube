@@ -2,14 +2,15 @@ import { Component } from '@angular/core';
 import { TableModule } from 'primeng/table';
 import { CommonModule } from '@angular/common';
 import {TextBoxComponent} from '../../ui/text-box/text-box.component';
-
+import { TabsModule } from 'primeng/tabs';
 
 @Component({
   selector: 'app-register',
   imports: [
     TableModule,
     CommonModule,
-    TextBoxComponent
+    TextBoxComponent,
+    TabsModule
   ],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'

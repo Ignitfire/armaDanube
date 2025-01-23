@@ -1,7 +1,6 @@
-<!-- dropdown.component.html -->
-<div class="dropdownn" [ngStyle]="divStyle ? {style: divStyle} : {}">
-  <button class="dropdown-toggle" [ngStyle]="buttonStyle ? {style: buttonStyle} : {}" >{{label}} </button>
-  <div class="dropdown-menu" [ngStyle]="menuStyle ? {style: menuStyle} : {}">
+<div class="dropdown" [ngClass]="dropdownClass">
+  <button class="dropdown-toggle" [ngClass]="buttonClass">{{label}}</button>
+  <div class="dropdown-menu" [ngClass]="menuClass">
     <button *ngFor="let item of items" (click)="onButtonClick(item)">
       {{ item.label }}
     </button>

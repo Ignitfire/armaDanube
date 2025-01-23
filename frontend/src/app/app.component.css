@@ -55,6 +55,20 @@ nav {
   background-color: #555;
 }
 
+
+::ng-deep .custom-button {
+  color: white;
+  margin: 0 30px;
+  padding: 15px;
+  font-size: 1.2rem;
+  background-color: #333;
+  border: none;
+}
+
+::ng-deep .custom-button:hover {
+  background-color: #555;
+}
+
 .content {
   flex: 1;
   display: flex;

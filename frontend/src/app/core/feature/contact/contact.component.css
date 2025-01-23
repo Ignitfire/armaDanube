@@ -3,12 +3,19 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
 .founders {
   display: flex;
   flex-direction: row;
   text-align: center;
+  width: 90%;
+  justify-content: space-around;
+}
+
+.founder{
+  width: 20%;
 }
 
 .contact-info {
