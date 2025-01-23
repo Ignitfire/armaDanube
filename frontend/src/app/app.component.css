@@ -43,7 +43,7 @@ nav {
   align-items: end;
 }
 
-nav a {
+.nav-element{
   color: white;
   text-decoration: none;
   margin: 0 30px;
@@ -51,7 +51,7 @@ nav a {
   font-size: 1.2rem;
 }
 
-nav a:hover {
+.nav-element:hover{
   background-color: #555;
 }
 

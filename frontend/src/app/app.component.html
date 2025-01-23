@@ -2,11 +2,11 @@
   <header>
     <img class="logo" src="ad_logo.png">
     <nav>
-      <a routerLink="/home"> Le Projet </a>
-      <a routerLink="/about"> Infos Pratiques </a>
+      <a class="nav-element" routerLink="/home"> Le Projet </a>
+      <app-dropdown class="nav-element" [label] = "'Infos Pratiques'" [enableCreation]= true [buttonStyle]=buttonStyle></app-dropdown>
       <img src="ad_title.png" height="90rem" alt="ARMADANUBE">
-      <a routerLink="/register"> Inscription & Matos </a>
-      <a routerLink="/contact"> Contact </a>
+      <a class="nav-element" routerLink="/register"> Inscription & Matos </a>
+      <a class="nav-element" routerLink="/contact"> Contact </a>
     </nav>
     <div class="login">
       <a routerLink="/login"> Login </a>
