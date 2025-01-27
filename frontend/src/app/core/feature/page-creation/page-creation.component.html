@@ -1,7 +1,11 @@
 <app-text-box>
   <form class="form" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
     <p-editor  formControlName="html" [style]="{ height: '320px' }" />
-    <input formControlName="title" placeholder="Titre de la page" />
-    <button class="submitButton" type="submit">Créer une page</button>
+    <input formControlName="name" placeholder="Titre de la page" />
+    <p-button *ngIf="isEditMode"  class="submitButton" type="submit" label="Editer la page" severity="warn"/>
+    <p-button *ngIf="!isEditMode" class="submitButton" type="submit" label="Créer la page" severity="success"/>
+
+
   </form>
 </app-text-box>
+

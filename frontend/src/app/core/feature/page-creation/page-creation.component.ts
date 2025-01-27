@@ -4,7 +4,9 @@ import {FormControl, FormGroup, FormsModule, ReactiveFormsModule} from '@angular
 import {TextBoxComponent } from '../../ui/text-box/text-box.component';
 import {PageService} from '../../data-access/page.service';
 import {AppComponent} from '../../../app.component';
-
+import {ActivatedRoute, Router} from '@angular/router';
+import {Button} from 'primeng/button';
+import {NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-page-creation',
@@ -15,33 +17,60 @@ import {AppComponent} from '../../../app.component';
     EditorModule,
     FormsModule,
     TextBoxComponent,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    Button,
+    NgIf
   ]
 })
 export class PageCreationComponent implements OnInit {
 
+  formGroup!: FormGroup;
+  isEditMode: boolean = false;
+  pageName: string = '';
+
+
   constructor(
     private pageService: PageService,
-    private appComponent: AppComponent
-  ) {
-    console.log('Constructor: PageService is', this.pageService);
-  }
-
-  formGroup!: FormGroup;
+    private appComponent: AppComponent,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit() {
-    console.log('ngOnInit: PageService is', this.pageService);
     this.formGroup = new FormGroup({
       html: new FormControl(),
-      title: new FormControl()
+      name: new FormControl()
+    });
+
+    this.route.params.subscribe(params => {
+      if (params['name']) {
+        this.isEditMode = true;
+        this.pageName = params['name'];
+        this.pageService.getPage(this.pageName).subscribe(response => {
+          this.formGroup.patchValue({
+            html: response.html,
+            name: response.name
+          });
+        });
+      } else {
+        this.isEditMode = false;
+        this.pageName = '';
+        this.formGroup.reset();
+      }
     });
   }
 
   onSubmit() {
-    console.log('Form submitted');
-    this.pageService.createPage(this.formGroup.value.title, this.formGroup.value.html).subscribe(response => {
-      console.log(response);
-    });
-    this.appComponent.refreshPageList(); // Call method to refresh the list
+    if (this.isEditMode) {
+      this.pageService.updatePage(this.pageName, this.formGroup.value.name, this.formGroup.value.html).subscribe(response => {
+        this.router.navigate(['/page/' + this.formGroup.value.name]);
+        this.appComponent.refreshPageList();
+      });
+    } else {
+      this.pageService.createPage(this.formGroup.value.name, this.formGroup.value.html).subscribe(response => {
+        this.router.navigate(['/page/' + this.formGroup.value.name]);
+        this.appComponent.refreshPageList();
+      });
+    }
   }
 }

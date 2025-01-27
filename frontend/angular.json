@@ -34,7 +34,8 @@
             "outputMode": "server",
             "ssr": {
               "entry": "src/server.ts"
-            }
+            },
+            "sourceMap": true
           },
           "configurations": {
             "production": {
@@ -90,9 +91,12 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/quill/dist/quill.snow.css",
+              "node_modules/quill/dist/quill.core.css"
             ],
             "scripts": [
+              "../node_modules/quill/dist/quill.core.js"
             ]
           }
         }

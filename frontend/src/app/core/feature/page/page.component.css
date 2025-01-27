@@ -1,0 +1,19 @@
+.displayPage{
+  display: flex;
+  flex-direction: column;
+}
+
+.deleteButton{
+  align-self:end;
+}
+
+/*TODO remove ::ng-deep for another solutoin eventually*/
+::ng-deep .ql-align-right {
+  text-align: right;
+}
+::ng-deep .ql-align-center {
+  text-align: center;
+}
+::ng-deep .ql-align-left {
+  text-align: left;
+}

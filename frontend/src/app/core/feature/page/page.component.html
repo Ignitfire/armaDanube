@@ -1,7 +1,8 @@
-<app-text-box>
+<app-text-box class="displayPage">
   <div class="page" [innerHTML]="htmlContent">
     </div>
-  <button (click)="deletePage()">Supprimer la page</button>
+  <p-button  class="editButton" label="Editer la page" severity="warn" (onClick)="editPage()"/>
+  <p-button  class="deleteButton" label="Supprimer la page" severity="danger" (onClick)="deletePage()"/>
 </app-text-box>
 
 <p-confirmDialog></p-confirmDialog>

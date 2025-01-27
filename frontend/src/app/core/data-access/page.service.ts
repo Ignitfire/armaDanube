@@ -27,4 +27,8 @@ export class PageService {
   deletePage(name: string): Observable<any> {
     return this.http.delete(`${BASE_URL}/page`, { params: { name } });
   }
+
+  updatePage(oldName: string, newName: string, html: string): Observable<any> {
+    return this.http.put(`${BASE_URL}/page`, { oldName, newName, html });
+  }
 }

@@ -1,5 +1,5 @@
 import express from 'express';
-import { savePage, getPage, getPageNames, deletePage} from '../controllers/page';
+import {savePage, getPage, getPageNames, deletePage, updatePage} from '../controllers/page';
 
 export default (router: express.Router) => {
     // @ts-ignore
@@ -10,4 +10,6 @@ export default (router: express.Router) => {
     router.get('/page/names', getPageNames);
     // @ts-ignore
     router.delete('/page', deletePage);
+    // @ts-ignore
+    router.put('/page', updatePage);
 };
