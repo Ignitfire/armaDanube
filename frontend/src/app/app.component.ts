@@ -7,10 +7,11 @@ import { DropdownComponent, DropdownItem } from './core/ui/dropdown/dropdown.com
 import { PageService } from './core/data-access/page.service';
 import { pageNameToRouteAndTitle } from './core/utils/dataToText';
 import { MessageService } from 'primeng/api';
+import {Toast} from 'primeng/toast';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterLink, MenubarModule, DropdownComponent],
+  imports: [RouterOutlet, RouterLink, MenubarModule, DropdownComponent, Toast],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   providers: [MessageService]
@@ -44,7 +45,7 @@ export class AppComponent implements OnInit {
     console.log('Refreshing page list');
     this.pageService.getPageNames().subscribe(response => {
       this.dropdownItems = response.map((item: { name: string; }) => pageNameToRouteAndTitle(item.name));
-      //TODO : cette mnière de faire permet d'avoir le bouton de création de page de manière permanente mais il faudrait trncher entre la méthode dans dropDwon avec enableCreation et cette méthode ci plus brute.
+      //TODO : cette manière de faire permet d'avoir le bouton de création de page de manière permanente mais il faudrait trncher entre la méthode dans dropDwon avec enableCreation et cette méthode ci plus brute.
       this.dropdownItems.push(this.AddPageItem);
     });
   }

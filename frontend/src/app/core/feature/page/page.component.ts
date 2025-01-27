@@ -46,7 +46,7 @@ export class PageComponent implements OnInit {
       accept: () => {
         this.pageService.deletePage(this.route.snapshot.params['name']).subscribe(() => {
           this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Page deleted successfully' });
-          // this.router.navigate(['/home']);
+          this.router.navigate(['/home']);
         });
       }
     });
