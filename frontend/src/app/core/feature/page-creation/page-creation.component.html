@@ -1,6 +1,7 @@
 <app-text-box>
   <form class="form" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
-    <p-editor  formControlName="text" [style]="{ height: '320px' }" />
+    <p-editor  formControlName="html" [style]="{ height: '320px' }" />
+    <input formControlName="title" placeholder="Titre de la page" />
     <button class="submitButton" type="submit">Créer une page</button>
   </form>
 </app-text-box>

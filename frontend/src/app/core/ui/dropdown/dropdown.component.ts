@@ -3,7 +3,7 @@ import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
 import { Router } from '@angular/router';
 import {NgClass, NgForOf} from '@angular/common';
 
-interface DropdownItem {
+export interface DropdownItem {
   label: string;
   route?: string;
   action?: () => void;
@@ -21,7 +21,7 @@ interface DropdownItem {
 })
 export class DropdownComponent implements OnInit{
   @Input() label! : string;
-  @Input() items! : any[];
+  @Input() items! : DropdownItem[];
   @Input() dropdownClass: string | undefined;
   @Input() buttonClass: string | undefined;
   @Input() menuClass: string | undefined;
@@ -29,7 +29,6 @@ export class DropdownComponent implements OnInit{
   constructor(private router: Router) {}
 
   ngOnInit() {
-    console.log("enableCreation", this.enableCreation);
     if (this.enableCreation) {
       this.items.push({
         label: '+ Ajouter une page',
