@@ -10,6 +10,7 @@ import { CommonModule } from '@angular/common';
 import {AppComponent} from '../../../app.component';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import {Button} from 'primeng/button';
+import {Toolbar} from 'primeng/toolbar';
 
 @Component({
   selector: 'app-page',
@@ -19,7 +20,8 @@ import {Button} from 'primeng/button';
     ToastModule,
     ConfirmDialogModule,
     CommonModule,
-    Button
+    Button,
+    Toolbar
   ],
   styleUrls: ['./page.component.css'],
   providers: [ConfirmationService]

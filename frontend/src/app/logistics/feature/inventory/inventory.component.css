@@ -1,0 +1,11 @@
+.items-list-textbox{
+  flex-direction: column;
+}
+
+.items-list-title{
+  margin: auto;
+}
+
+.items-list-action{
+  margin: 5px;
+}

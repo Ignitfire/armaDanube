@@ -1,8 +1,20 @@
- <app-text-box class="persons-list-textbox">
-    <p-table class="persons-list" [value]="items" [tableStyle]="{ 'max-width': '100%' }" [paginator]="true" [rows]="5">
+ <app-text-box class="items-list-textbox">
+   <p-toolbar styleClass="mb-6">
+     <ng-template #start>
+       <p-button label="New" icon="pi pi-plus" class="mr-2" (onClick)="createItem()" />
+     </ng-template>
+
+     <ng-template #center>
+       <h2 class="items-list-title">Liste du Matériel</h2>
+     </ng-template>
+     <ng-template #end>
+       <p-button label="Export" icon="pi pi-upload" severity="secondary" (onClick)="exportCSV($event)" />
+     </ng-template>
+   </p-toolbar>
+    <p-table class="items-list" [value]="items" [tableStyle]="{ 'max-width': '100%' }" [paginator]="true" [rows]="5">
       <ng-template #header>
         <tr>
-          <th>Actions </th>
+          <th [width]="'200px'">Actions </th>
           <th>Matériel</th>
           <th>Type</th>
           <th>Quand?</th>
@@ -12,9 +24,9 @@
       <ng-template #body let-item>
         <tr>
           <td>
-            <p-button icon="pi pi-user" severity="warn" (onClick)="editItem(item)" />
-            <p-button icon="pi pi-trash" severity="danger" (onClick)="deleteItem(item)"/>
-            <p-button icon="pi pi-calendar" severity="info" (onClick)="editContribution(item)"/>
+            <p-button class="items-list-action" icon="pi pi-user" severity="warn" (onClick)="editItem(item)" />
+            <p-button class="items-list-action" icon="pi pi-trash" severity="danger" (onClick)="deleteItem(item)"/>
+            <p-button class="items-list-action" icon="pi pi-calendar" severity="info" (onClick)="editContribution(item)"/>
           </td>
           <td>{{ item.name }}</td>
           <td></td>

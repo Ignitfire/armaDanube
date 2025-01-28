@@ -3,6 +3,7 @@ import {NgForOf} from '@angular/common';
 import {TableModule} from 'primeng/table';
 import {TextBoxComponent} from '../../../shared/ui/text-box/text-box.component';
 import {Button} from 'primeng/button';
+import {Toolbar} from 'primeng/toolbar';
 
 @Component({
   selector: 'app-inventory',
@@ -10,7 +11,8 @@ import {Button} from 'primeng/button';
     NgForOf,
     TableModule,
     TextBoxComponent,
-    Button
+    Button,
+    Toolbar
   ],
   templateUrl: './inventory.component.html',
   styleUrl: './inventory.component.css'
@@ -39,5 +41,13 @@ export class InventoryComponent {
 
   editContribution(item: any) {
 
+  }
+
+  createItem() {
+    
+  }
+
+  exportCSV($event: MouseEvent) {
+    
   }
 }
