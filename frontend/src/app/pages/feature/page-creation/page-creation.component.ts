@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import { EditorModule } from 'primeng/editor';
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {TextBoxComponent } from '../../ui/text-box/text-box.component';
+import {TextBoxComponent } from '../../../shared/ui/text-box/text-box.component';
 import {PageService} from '../../data-access/page.service';
 import {AppComponent} from '../../../app.component';
 import {ActivatedRoute, Router} from '@angular/router';

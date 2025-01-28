@@ -1,6 +1,5 @@
 import express from "express";
-
-import {deleteUserById, getUserById, getUsers, UserModel} from "../models/user";
+import {deleteUserById, getUserById, getUsers} from "../models/user";
 
 export const getAllUsers = async (req: express.Request, res: express.Response)=> {
     try {
@@ -38,7 +37,7 @@ export const updateUser = async (req: express.Request, res: express.Response)=> 
 
         const user = await getUserById(id);
 
-        user!.lastname = lastname;
+        user!.lastName = lastname;
         await user!.save();
 
         return res.status(200).json(user).end();

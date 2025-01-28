@@ -1,0 +1,11 @@
+.persons-list-textbox{
+  flex-direction: column;
+}
+
+.persons-list-title{
+  margin: auto;
+}
+
+.persons-list-action{
+  margin: 5px;
+}

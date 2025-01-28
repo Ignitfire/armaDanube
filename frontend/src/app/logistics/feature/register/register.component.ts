@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { TableModule } from 'primeng/table';
 import { CommonModule } from '@angular/common';
-import {TextBoxComponent} from '../../ui/text-box/text-box.component';
+import {TextBoxComponent} from '../../../shared/ui/text-box/text-box.component';
 import { TabsModule } from 'primeng/tabs';
+import {Button} from 'primeng/button';
+import {Toolbar} from 'primeng/toolbar';
 
 @Component({
   selector: 'app-register',
@@ -10,14 +12,16 @@ import { TabsModule } from 'primeng/tabs';
     TableModule,
     CommonModule,
     TextBoxComponent,
-    TabsModule
+    TabsModule,
+    Button,
+    Toolbar
   ],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
 
-  registerations: any[] = [
+  registrations: any[] = [
     {
       id: 1,
       name: 'John Doe',
@@ -116,4 +120,23 @@ export class RegisterComponent {
     }
     ]
 
+  editProfile(registration: any) {
+
+  }
+
+  deleteProfile(registration: any) {
+
+  }
+
+  editRegistration(registration: any) {
+
+  }
+
+  createProfile() {
+
+  }
+
+  exportCSV($event: MouseEvent) {
+
+  }
 }

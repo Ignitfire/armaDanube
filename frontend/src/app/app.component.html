@@ -5,18 +5,23 @@
       <a class="nav-element" routerLink="/home"> Le Projet </a>
       <app-dropdown
         [label]="'Infos Pratiques'"
-        [items]="dropdownItems"
+        [items]="dropdownPages"
         [enableCreation]="true"
         dropdownClass="custom-dropdown"
         buttonClass="custom-button"
         menuClass="custom-menu">
       </app-dropdown>
       <img src="ad_title.png" height="90rem" alt="ARMADANUBE" loading="eager">
-      <a class="nav-element" routerLink="/register"> Inscription & Matos </a>
-      <a class="nav-element" routerLink="/contact"> Contact </a>
+      <app-dropdown
+        [label]="'Inscription & Matos'"
+        [items]="dropdownRegistering"
+        dropdownClass="custom-dropdown"
+        buttonClass="custom-button"
+        menuClass="custom-menu">
+      </app-dropdown>      <a class="nav-element" routerLink="/contact"> Contact </a>
     </nav>
     <div class="login">
-      <a routerLink="/login"> Login </a>
+      <p-button label="Se connecter"  [raised]="true" severity="info" />
     </div>
   </header>
 

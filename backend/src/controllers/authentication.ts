@@ -33,7 +33,7 @@ export const login = async (req: express.Request, res: express.Response)=> {
             return res.sendStatus(403);
         }
         const salt = random();
-        user.authentication.sessionToken = authentication(salt, user._id.toString());
+        user.authentication.sessionToken = authentication(salt, user.authentication.password); //* was salt, user._id.toString(), before changed it to fix error.
         await user.save();
 
         res.cookie('ARMADANUBE-AUTH', user.authentication.sessionToken,

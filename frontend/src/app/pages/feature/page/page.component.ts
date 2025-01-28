@@ -2,7 +2,7 @@
 import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PageService } from '../../data-access/page.service';
-import { TextBoxComponent } from '../../ui/text-box/text-box.component';
+import { TextBoxComponent } from '../../../shared/ui/text-box/text-box.component';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';

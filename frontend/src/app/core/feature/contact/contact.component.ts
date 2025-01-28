@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {TextBoxComponent} from '../../ui/text-box/text-box.component';
+import {TextBoxComponent} from '../../../shared/ui/text-box/text-box.component';
 import {CardComponent} from '../../ui/card/card.component';
 
 @Component({

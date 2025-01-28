@@ -1,0 +1,44 @@
+<app-text-box class="persons-list-textbox">
+  <p-toolbar styleClass="mb-6">
+    <ng-template #start>
+      <p-button label="New" icon="pi pi-plus" class="mr-2" (onClick)="createProfile()" />
+    </ng-template>
+
+    <ng-template #center>
+      <h2 class="persons-list-title">Liste des Participants</h2>
+    </ng-template>
+    <ng-template #end>
+      <p-button label="Export" icon="pi pi-upload" severity="secondary" (onClick)="exportCSV($event)" />
+    </ng-template>
+  </p-toolbar>
+  <p-table class="persons-list" [value]="registrations" [tableStyle]="{ 'max-width': '100%' }" [paginator]="true" [rows]="5">
+    <ng-template #header>
+      <tr>
+        <th [width]="'200px'">Actions </th>
+        <th >Qui?</th>
+        <th>Quand?</th>
+        <th>Quoi?</th>
+      </tr>
+    </ng-template>
+    <ng-template #body let-registration>
+      <tr>
+        <td>
+          <p-button class="persons-list-action" icon="pi pi-user" severity="warn" (onClick)="editProfile(registration)" />
+          <p-button class="persons-list-action" icon="pi pi-trash" severity="danger" (onClick)="deleteProfile(registration)"/>
+          <p-button class="persons-list-action" icon="pi pi-calendar" severity="info" (onClick)="editRegistration(registration)"/>
+        </td>
+        <td>{{ registration.name }}</td>
+        <td>
+          <div *ngFor="let date of registration.dates">
+            Arrival: {{ date.arrival }}, Departure: {{ date.departure }}
+          </div>
+        </td>
+        <td>
+          <div *ngFor="let item of registration.items">
+            {{ item.name }} (Quantity: {{ item.quantity }})
+          </div>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</app-text-box>
